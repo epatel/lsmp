@@ -1,0 +1,239 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3AAA5E0D15EEA37100670030 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAA5E0C15EEA37100670030 /* Foundation.framework */; };
+		3AAA5E1015EEA37100670030 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AAA5E0F15EEA37100670030 /* main.m */; };
+		3AAA5E1415EEA37100670030 /* lsmp.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 3AAA5E1315EEA37100670030 /* lsmp.1 */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3AAA5E0615EEA37100670030 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+				3AAA5E1415EEA37100670030 /* lsmp.1 in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		3AAA5E0815EEA37100670030 /* lsmp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lsmp; sourceTree = BUILT_PRODUCTS_DIR; };
+		3AAA5E0C15EEA37100670030 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3AAA5E0F15EEA37100670030 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3AAA5E1215EEA37100670030 /* lsmp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "lsmp-Prefix.pch"; sourceTree = "<group>"; };
+		3AAA5E1315EEA37100670030 /* lsmp.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = lsmp.1; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AAA5E0515EEA37100670030 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAA5E0D15EEA37100670030 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AAA5DFD15EEA37100670030 = {
+			isa = PBXGroup;
+			children = (
+				3AAA5E0E15EEA37100670030 /* lsmp */,
+				3AAA5E0B15EEA37100670030 /* Frameworks */,
+				3AAA5E0915EEA37100670030 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3AAA5E0915EEA37100670030 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA5E0815EEA37100670030 /* lsmp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3AAA5E0B15EEA37100670030 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA5E0C15EEA37100670030 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3AAA5E0E15EEA37100670030 /* lsmp */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA5E0F15EEA37100670030 /* main.m */,
+				3AAA5E1315EEA37100670030 /* lsmp.1 */,
+				3AAA5E1115EEA37100670030 /* Supporting Files */,
+			);
+			path = lsmp;
+			sourceTree = "<group>";
+		};
+		3AAA5E1115EEA37100670030 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3AAA5E1215EEA37100670030 /* lsmp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AAA5E0715EEA37100670030 /* lsmp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AAA5E1715EEA37100670030 /* Build configuration list for PBXNativeTarget "lsmp" */;
+			buildPhases = (
+				3AAA5E0415EEA37100670030 /* Sources */,
+				3AAA5E0515EEA37100670030 /* Frameworks */,
+				3AAA5E0615EEA37100670030 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lsmp;
+			productName = lsmp;
+			productReference = 3AAA5E0815EEA37100670030 /* lsmp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AAA5DFF15EEA37100670030 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Edward Patel";
+			};
+			buildConfigurationList = 3AAA5E0215EEA37100670030 /* Build configuration list for PBXProject "lsmp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3AAA5DFD15EEA37100670030;
+			productRefGroup = 3AAA5E0915EEA37100670030 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AAA5E0715EEA37100670030 /* lsmp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AAA5E0415EEA37100670030 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AAA5E1015EEA37100670030 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3AAA5E1515EEA37100670030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		3AAA5E1615EEA37100670030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		3AAA5E1815EEA37100670030 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "lsmp/lsmp-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		3AAA5E1915EEA37100670030 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "lsmp/lsmp-Prefix.pch";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AAA5E0215EEA37100670030 /* Build configuration list for PBXProject "lsmp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AAA5E1515EEA37100670030 /* Debug */,
+				3AAA5E1615EEA37100670030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AAA5E1715EEA37100670030 /* Build configuration list for PBXNativeTarget "lsmp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AAA5E1815EEA37100670030 /* Debug */,
+				3AAA5E1915EEA37100670030 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AAA5DFF15EEA37100670030 /* Project object */;
+}

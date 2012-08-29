@@ -19,7 +19,10 @@ enum {
 
 void print_usage_and_exit()
 {
-    printf("Usage: lsmp [ -b <bundle id> | -e | -p ] <filename>\n");
+    printf("Usage: lsmp [ -b <bundle id> | -e | -p ] <filename>\n\n");
+    printf("       -b <bundle id>  Check if bundle id is identical\n");
+    printf("       -e              Check if profile has expired\n");
+    printf("       -p              Check if push has been configured\n");
     exit(-1);
 }
 

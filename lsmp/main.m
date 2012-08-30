@@ -15,7 +15,8 @@ enum {
     RETURN_NO_PUSH
 };
 
-#define NSLog(FORMAT, ...) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+// Lazy
+#define NSLog(FORMAT, ...) if (!quiet) printf("%s\n", [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
 
 void print_usage_and_exit()
 {
@@ -23,6 +24,7 @@ void print_usage_and_exit()
     printf("       -b <bundle id>  Check if bundle id is identical\n");
     printf("       -e              Check if profile has expired\n");
     printf("       -p              Check if push has been configured\n");
+    printf("       -q              Silent output\n");
     exit(-1);
 }
 
@@ -39,11 +41,14 @@ int main(int argc, const char * argv[])
         const char *requiredBundleID = NULL;
         BOOL nonZeroExitOnDate = NO;
         BOOL nonZeroExitOnNoPush = NO;
+        BOOL quiet = NO;
         
         while (i < argc) {
             if (!strcmp("-b", argv[i])) {
                 i++;
                 requiredBundleID = argv[i];
+            } else if (!strcmp("-q", argv[i])) {
+                quiet = YES;
             } else if (!strcmp("-e", argv[i])) {
                 nonZeroExitOnDate = YES;
             } else if (!strcmp("-p", argv[i])) {

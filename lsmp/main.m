@@ -12,7 +12,8 @@
 enum {
     RETURN_WRONG_BUNDLE_ID = 101,
     RETURN_EXPIRED,
-    RETURN_NO_PUSH
+    RETURN_NO_PUSH,
+    RETURN_NO_ENTERPRISE_PROFILE
 };
 
 // Lazy
@@ -24,6 +25,7 @@ void print_usage_and_exit()
     printf("       -b <bundle id>  Check if bundle id is identical\n");
     printf("       -e              Check if profile has expired\n");
     printf("       -p              Check if push has been configured\n");
+    printf("       -E              Check if it is an Enterprise profile\n");
     printf("       -q              Silent output\n");
     exit(-1);
 }
@@ -41,6 +43,7 @@ int main(int argc, const char * argv[])
         const char *requiredBundleID = NULL;
         BOOL nonZeroExitOnDate = NO;
         BOOL nonZeroExitOnNoPush = NO;
+        BOOL nonZeroExitOnNotEnterprise = NO;
         BOOL quiet = NO;
         
         while (i < argc) {
@@ -51,6 +54,8 @@ int main(int argc, const char * argv[])
                 quiet = YES;
             } else if (!strcmp("-e", argv[i])) {
                 nonZeroExitOnDate = YES;
+            } else if (!strcmp("-E", argv[i])) {
+                nonZeroExitOnNotEnterprise = YES;
             } else if (!strcmp("-p", argv[i])) {
                 nonZeroExitOnNoPush = YES;
             } else {
@@ -94,11 +99,11 @@ int main(int argc, const char * argv[])
 
         NSData *content_part = [NSData dataWithBytes:content_start length:(start-content_start + 8)];
 
-        NSPropertyListSerialization *plist = [NSPropertyListSerialization propertyListWithData:content_part
-                                                                                       options:NSPropertyListImmutable
-                                                                                        format:nil
-                                                                                         error:nil];
-                
+        NSDictionary *plist = [NSPropertyListSerialization propertyListWithData:content_part
+                                                                        options:NSPropertyListImmutable
+                                                                         format:nil
+                                                                          error:nil];
+        
         NSLog(@"Name:               %@", [plist valueForKey:@"Name"]);
 
         NSString *bundleID = [[[plist valueForKey:@"Entitlements"] valueForKey:@"application-identifier"] stringByReplacingCharactersInRange:NSMakeRange(0, 11) withString:@""];
@@ -126,7 +131,15 @@ int main(int argc, const char * argv[])
             if (!returnValue && nonZeroExitOnNoPush)
                 returnValue = RETURN_NO_PUSH;
         }
-                
+        
+        NSNumber *enterprise = [plist valueForKey:@"ProvisionsAllDevices"];
+
+        if ([enterprise boolValue]) {
+            NSLog(@"~~Enterprise profile~~");
+        } else {
+            if (!returnValue && nonZeroExitOnNotEnterprise)
+                returnValue = RETURN_NO_ENTERPRISE_PROFILE;
+        }
     }
     
     return returnValue;

@@ -24,3 +24,9 @@ http://www.memention.com/blog/2012/08/30/Provision-this.html
     then
       echo Profile lacks Push Notification config
     fi 
+
+    # Test for Enterprise profiles
+    if ! lsmp -E -q $profile
+    then
+      echo Profile is no Enterprise profile
+    fi 
